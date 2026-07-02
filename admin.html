@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vardha Admin Panel</title>
+  <meta
+    name="description"
+    content="Admin panel for managing Vardha grocery products, prices, stock, and images."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">
+          <strong>Vardha</strong>
+          <small>Admin Panel</small>
+        </span>
+      </a>
+
+      <nav class="site-nav admin-nav">
+        <a href="index.html">Customer Site</a>
+        <a href="admin.html" class="active">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero admin-hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Product Management</p>
+        <h1>Control products, stock, prices, and images from one place.</h1>
+        <p class="lead">
+          This admin panel uses localStorage, so every product update appears instantly on the customer site
+          and stays available after refresh.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-grid">
+        <form class="admin-form-card reveal" id="productForm">
+          <div class="admin-card-heading">
+            <div>
+              <p class="eyebrow">Add or Edit</p>
+              <h2 id="formTitle">Add New Product</h2>
+            </div>
+            <button type="button" class="btn btn-secondary admin-reset-button" id="resetFormButton">Reset</button>
+          </div>
+
+          <input type="hidden" id="productId" name="productId">
+
+          <label for="productSku">SKU</label>
+          <input type="text" id="productSku" name="productSku" placeholder="Enter SKU" required>
+
+          <label for="productName">Product Name</label>
+          <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
+
+          <label for="productPrice">Price</label>
+          <input type="number" id="productPrice" name="productPrice" min="1" step="1" placeholder="Enter price" required>
+
+          <label for="productUnit">Unit</label>
+          <input type="text" id="productUnit" name="productUnit" placeholder="kg, pack, box, item" required>
+
+          <label for="productStock">Stock Quantity</label>
+          <input type="number" id="productStock" name="productStock" min="0" step="1" placeholder="Enter stock quantity" required>
+
+          <label for="productCategory">Category</label>
+          <select id="productCategory" name="productCategory" required></select>
+
+          <label for="productStatus">Status</label>
+          <select id="productStatus" name="productStatus" required>
+            <option value="available">Available</option>
+            <option value="coming-soon">Coming Soon</option>
+          </select>
+
+          <label for="productImage">Image URL</label>
+          <input type="url" id="productImage" name="productImage" placeholder="Paste image URL" required>
+
+          <button type="submit" class="btn btn-primary">Save Product</button>
+          <p class="form-message" id="adminMessage" aria-live="polite"></p>
+        </form>
+
+        <div class="admin-table-card reveal reveal-delay">
+          <div class="admin-card-heading">
+            <div>
+              <p class="eyebrow">Product Table</p>
+              <h2>Current Inventory</h2>
+            </div>
+          </div>
+
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>SKU</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Unit</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="admin-table-card reveal payment-admin-card">
+          <div class="admin-card-heading">
+            <div>
+              <p class="eyebrow">Payment QR</p>
+              <h2>Bank QR Payment Option</h2>
+              <p>Upload the QR image linked to your bank account. It will appear in the customer cart.</p>
+            </div>
+          </div>
+
+          <form class="payment-qr-form" id="paymentQrForm">
+            <label for="paymentPayeeName">Payee Name</label>
+            <input type="text" id="paymentPayeeName" name="paymentPayeeName" placeholder="Vardha">
+
+            <label for="paymentNote">Payment Note</label>
+            <input type="text" id="paymentNote" name="paymentNote" placeholder="Scan and pay using any UPI or banking app.">
+
+            <label for="paymentQrFile">QR Code Image</label>
+            <input type="file" id="paymentQrFile" accept="image/*">
+
+            <div class="payment-admin-actions">
+              <button type="submit" class="btn btn-primary">Save Payment QR</button>
+              <button type="button" class="btn btn-secondary" id="clearPaymentQrButton">Remove QR</button>
+            </div>
+
+            <img class="payment-qr-preview" id="paymentQrPreview" alt="">
+            <p class="form-message" id="paymentQrMessage" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="admin-table-card reveal">
+          <div class="admin-card-heading">
+            <div>
+              <p class="eyebrow">Bulk Price Upload</p>
+              <h2>Upload CSV or Excel price updates</h2>
+              <p>
+                Match by SKU, Product ID, or Product Name. Preview validated rows before applying updates.
+              </p>
+            </div>
+          </div>
+
+          <div class="bulk-upload-panel">
+            <input type="file" id="bulkUploadFile" accept=".csv,.xlsx">
+            <button type="button" class="btn btn-secondary" id="downloadBulkTemplateButton">Download Template</button>
+            <button type="button" class="btn btn-primary" id="applyBulkUploadButton" disabled>Apply Valid Updates</button>
+          </div>
+          <p class="form-message" id="bulkUploadMessage" aria-live="polite"></p>
+
+          <div class="bulk-preview-grid">
+            <div>
+              <h3>Success Preview</h3>
+              <div class="admin-table-wrap">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Match</th>
+                      <th>Product</th>
+                      <th>Old Price</th>
+                      <th>New Price</th>
+                      <th>Unit</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bulkSuccessBody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <div class="admin-card-heading compact-heading">
+                <h3>Failed Records</h3>
+                <button type="button" class="small-button" id="downloadErrorReportButton" disabled>Download Error Report</button>
+              </div>
+              <div class="admin-table-wrap">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Row</th>
+                      <th>Identifier</th>
+                      <th>Error</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bulkFailedBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="upload-history">
+            <h3>Upload History</h3>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>File</th>
+                    <th>Updated</th>
+                    <th>Failed</th>
+                  </tr>
+                </thead>
+                <tbody id="bulkHistoryBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vardha</strong>
+            <small>Admin Access</small>
+          </span>
+        </a>
+        <p>Manage the storefront inventory without any backend or external tools.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Customer Site</a>
+          <a href="admin.html">Admin Panel</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Data Storage</h3>
+        <p>Products and cart data are stored locally in the browser using localStorage.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

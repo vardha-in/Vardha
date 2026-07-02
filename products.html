@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Vardha Grocery Categories</title>
+  <meta
+    name="description"
+    content="Browse the product categories available at Vardha, including avals, dry fruits, vegetables, flours, pulses, snacks, and more."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="products">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">
+          <strong>Vardha</strong>
+          <small>Wholesale & Retail Grocery</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Our Categories</p>
+        <h1>Grocery essentials presented with premium clarity.</h1>
+        <p class="lead">
+          The categories below help visitors understand the full Vardha range at a glance,
+          whether they are shopping for home use or sourcing in larger quantities.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="catalog-grid shop-grid" id="allProductsGrid">
+          <!-- Updated product cards with category button, price label, and quantity controls -->
+          <article class="catalog-card reveal">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Packed grains and avals in jars">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Staples</button>
+              <h3>Avals</h3>
+              <p>Light, versatile staple choices for breakfast, snacks, and daily kitchen use.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 80 / pack</span>
+                <div class="quantity-selector" aria-label="Avals quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Avals quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Avals quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=900&q=80" alt="Premium dry fruits and nuts">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Premium Selection</button>
+              <h3>Dry Fruits</h3>
+              <p>Gift-worthy and everyday dry fruit assortments presented with a premium touch.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 220 / box</span>
+                <div class="quantity-selector" aria-label="Dry Fruits quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Dry Fruits quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Dry Fruits quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay-2">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=900&q=80" alt="Fresh fruit display">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Fresh Produce</button>
+              <h3>Fruits</h3>
+              <p>Bright, fresh fruit selections for homes, stores, and wellness-focused buyers.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 120 / kg</span>
+                <div class="quantity-selector" aria-label="Fruits quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Fruits quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Fruits quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Leafy greens and vegetables">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Fresh Produce</button>
+              <h3>Greens</h3>
+              <p>Leafy options chosen for daily cooking, freshness, and balanced home meals.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 40 / bunch</span>
+                <div class="quantity-selector" aria-label="Greens quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Greens quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Greens quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1467453678174-768ec283a940?auto=format&fit=crop&w=900&q=80" alt="Fresh vegetables in baskets">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Kitchen Essentials</button>
+              <h3>Vegetables</h3>
+              <p>Core vegetable selections for regular family purchases and wholesale supply needs.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 55 / kg</span>
+                <div class="quantity-selector" aria-label="Vegetables quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Vegetables quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Vegetables quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay-2">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=900&q=80" alt="Flours and powdered grains in bowls">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Pantry Range</button>
+              <h3>Flours</h3>
+              <p>Everyday flour varieties suited for routine cooking and bulk pantry stocking.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 70 / pack</span>
+                <div class="quantity-selector" aria-label="Flours quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Flours quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Flours quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e1?auto=format&fit=crop&w=900&q=80" alt="Pulses and lentils in measuring bowls">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Pantry Range</button>
+              <h3>Pulses</h3>
+              <p>Trusted staples for daily meals, presented in a format that feels clean and organized.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 95 / kg</span>
+                <div class="quantity-selector" aria-label="Pulses quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Pulses quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Pulses quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=80" alt="Wheat grains spilling from a scoop">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Staples</button>
+              <h3>Wheat</h3>
+              <p>Reliable grain supply for household use, regular retailers, and volume-based orders.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 60 / kg</span>
+                <div class="quantity-selector" aria-label="Wheat quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Wheat quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Wheat quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay-2">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=900&q=80" alt="Packaged snacks and savory treats">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Ready to Enjoy</button>
+              <h3>Snacks</h3>
+              <p>Quick-moving snack options that work well for families, gifting, and retail shelves.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 35 / pack</span>
+                <div class="quantity-selector" aria-label="Snacks quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Snacks quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Snacks quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=900&q=80" alt="Personal care bottles arranged neatly">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Daily Essentials</button>
+              <h3>Personal Care</h3>
+              <p>Convenient add-on products that support one-stop household buying.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 110 / item</span>
+                <div class="quantity-selector" aria-label="Personal Care quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Personal Care quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Personal Care quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80" alt="Home care cleaning products">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Daily Essentials</button>
+              <h3>Home Care</h3>
+              <p>Useful home maintenance products for practical family and retail shopping lists.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 95 / item</span>
+                <div class="quantity-selector" aria-label="Home Care quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Home Care quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Home Care quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal reveal-delay-2">
+            <div class="product-image-frame">
+              <img src="https://images.unsplash.com/photo-1514517220031-b1fbf66bdf9b?auto=format&fit=crop&w=900&q=80" alt="Side dishes and grocery add-ons">
+            </div>
+            <div class="card-content">
+              <button type="button" class="category-button">Add-on Range</button>
+              <h3>Sides</h3>
+              <p>Complementary items that round out orders and improve overall product variety.</p>
+              <div class="product-card-footer">
+                <span class="price-label">From Rs. 45 / pack</span>
+                <div class="quantity-selector" aria-label="Sides quantity selector">
+                  <button type="button" class="qty-button" data-action="decrease" aria-label="Decrease Sides quantity">-</button>
+                  <span class="qty-value">1</span>
+                  <button type="button" class="qty-button" data-action="increase" aria-label="Increase Sides quantity">+</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container cta-panel reveal">
+        <div>
+          <p class="eyebrow">Need More Details?</p>
+          <h2>Ask about availability, quantities, or custom requirements.</h2>
+          <p>Vardha is ready to support both direct shoppers and wholesale enquiries.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary">Enquire Now</a>
+          <a
+            href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20would%20like%20details%20about%20your%20product%20categories."
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vardha</strong>
+            <small>Premium Grocery Store</small>
+          </span>
+        </a>
+        <p>Trusted wholesale and retail groceries with a clean, premium customer experience.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Business Info</h3>
+        <p>Phone: +91 9600029246</p>
+        <p>Email: vardhagrocers@gmail.com</p>
+        <p>Open for family and wholesale enquiries.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20would%20like%20to%20know%20more%20about%20your%20grocery%20products."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Vardha on WhatsApp"
+  >
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

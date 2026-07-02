@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vardha | Grocery Store</title>
+  <meta
+    name="description"
+    content="Vardha is a mini grocery e-commerce website for browsing products, adding to cart, and ordering through WhatsApp."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="store">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">
+          <strong>Vardha</strong>
+          <small>Wholesale & Retail Grocery</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#home" class="active">Home</a>
+        <a href="#catalog">Products</a>
+        <a href="#why-vardha">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+
+      <button class="cart-trigger" id="cartTrigger" type="button" aria-label="Open shopping cart">
+        <span class="cart-trigger-icon">Cart</span>
+        <span class="cart-trigger-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">www.vardha.in</p>
+          <h1>Fresh groceries for homes, retailers, and bulk buyers.</h1>
+          <p class="hero-text">
+            Explore premium grocery essentials, dry fruits, fresh produce, snacks, and
+            care products in one modern storefront. Add items to your cart, adjust quantity,
+            and send your final order directly through WhatsApp.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">Shop Products</a>
+            <button type="button" class="btn btn-secondary" id="heroCartButton">View Cart</button>
+          </div>
+
+          <div class="hero-metrics">
+            <article class="metric-card">
+              <strong>Live Cart</strong>
+              <span>dynamic pricing and quantity updates</span>
+            </article>
+            <article class="metric-card">
+              <strong>WhatsApp Orders</strong>
+              <span>single product or full-cart ordering</span>
+            </article>
+            <article class="metric-card">
+              <strong>Admin Ready</strong>
+              <span>manage products using local storage</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay">
+          <article class="hero-feature-card image-card card-tall">
+            <img
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+              alt="Premium grocery selection with vegetables and pantry items"
+            >
+          </article>
+
+          <article class="hero-feature-card image-card">
+            <img
+              src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?auto=format&fit=crop&w=900&q=80"
+              alt="Dry fruits and healthy grocery assortments"
+            >
+          </article>
+
+          <article class="hero-feature-card info-card">
+            <p class="mini-label">Now Shopping Enabled</p>
+            <h2>Browse, add to cart, and order instantly.</h2>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="catalog">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Product Catalogue</p>
+          <h2>Choose your grocery essentials by category</h2>
+          <p>
+            Filter categories, add items to your cart, and use WhatsApp for fast order confirmation.
+          </p>
+        </div>
+
+        <div class="category-filter-bar reveal" id="categoryFilters"></div>
+        <div class="catalog-grid shop-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="why-vardha">
+      <div class="container why-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>Made for both daily shoppers and wholesale buyers</h2>
+          <p>
+            The store combines premium visuals with practical shopping features like quantity control,
+            stock visibility, saved cart state, and simple WhatsApp ordering.
+          </p>
+        </div>
+
+        <div class="why-list">
+          <article class="why-card reveal">
+            <h3>Premium product display</h3>
+            <p>Clean product cards with hover zoom, bold pricing, and category-first browsing.</p>
+          </article>
+          <article class="why-card reveal reveal-delay">
+            <h3>Fast ordering workflow</h3>
+            <p>Add items, change quantity, and send the final order without reloading the page.</p>
+          </article>
+          <article class="why-card reveal reveal-delay-2">
+            <h3>Simple admin control</h3>
+            <p>Update products, prices, images, and stock through a beginner-friendly admin panel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container cta-panel reveal">
+        <div>
+          <p class="eyebrow">Need Help?</p>
+          <h2>Contact Vardha for large orders or custom requirements.</h2>
+          <p>Use the cart for direct product orders or message us on WhatsApp for special requests.</p>
+        </div>
+        <div class="cta-actions">
+          <a
+            href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20would%20like%20to%20know%20more%20about%20your%20grocery%20products."
+            class="btn btn-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat on WhatsApp
+          </a>
+          <a href="admin.html" class="btn btn-secondary">Go to Admin Panel</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div>
+        <p class="eyebrow">Shopping Cart</p>
+        <h2>Your Grocery Selection</h2>
+      </div>
+      <button type="button" class="cart-close" id="cartClose" aria-label="Close cart">Close</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-summary">
+      <form class="delivery-form" id="addressForm">
+        <div class="admin-card-heading">
+          <div>
+            <p class="eyebrow">Delivery Location</p>
+            <h3>Customer Address</h3>
+          </div>
+        </div>
+
+        <input type="text" name="customerName" placeholder="Customer name" required>
+        <input type="tel" name="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+        <textarea name="deliveryAddress" placeholder="Delivery address" rows="3" required></textarea>
+        <input type="text" name="landmark" placeholder="Landmark">
+        <input type="text" name="pincode" placeholder="Pincode" pattern="[0-9]{6}" required>
+        <div class="location-grid">
+          <input type="text" name="latitude" placeholder="Latitude" required>
+          <input type="text" name="longitude" placeholder="Longitude" required>
+        </div>
+        <div class="location-actions">
+          <button type="button" class="small-button" id="useCurrentLocationButton">Use GPS</button>
+          <button type="button" class="small-button" id="openMapsButton">Open Google Maps</button>
+          <button type="submit" class="small-button">Save Address</button>
+        </div>
+        <p class="form-message" id="addressMessage" aria-live="polite"></p>
+      </form>
+
+      <div class="saved-address-list" id="savedAddressList"></div>
+
+      <div class="payment-qr-card" id="paymentQrWrap">
+        <div>
+          <p class="eyebrow">Payment Option</p>
+          <h3 id="paymentQrName">Vardha</h3>
+          <p id="paymentQrNote">Add your bank payment QR from the Admin Panel.</p>
+        </div>
+        <img id="paymentQrImage" alt="">
+      </div>
+
+      <div class="cart-summary-row">
+        <span>Items</span>
+        <strong id="cartItemTotal">0</strong>
+      </div>
+      <div class="cart-summary-row grand-total">
+        <span>Grand Total</span>
+        <strong id="cartGrandTotal">Rs. 0</strong>
+      </div>
+      <div class="cart-summary-actions">
+        <button type="button" class="btn btn-primary" id="orderAllButton">Order All via WhatsApp</button>
+        <button type="button" class="btn btn-secondary" id="clearCartButton">Clear Cart</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vardha</strong>
+            <small>Premium Grocery Store</small>
+          </span>
+        </a>
+        <p>Trusted wholesale and retail groceries with clean ordering and admin management.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#catalog">Products</a>
+          <a href="#contact">Contact</a>
+          <a href="admin.html">Admin Panel</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Business Info</h3>
+        <p>Phone: +91 9600029246</p>
+        <p>Email: vardhagrocers@gmail.com</p>
+        <p>Use WhatsApp ordering for quick product confirmation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20would%20like%20to%20know%20more%20about%20your%20grocery%20products."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Vardha on WhatsApp"
+  >
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

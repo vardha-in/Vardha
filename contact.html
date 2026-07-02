@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Vardha | Grocery Enquiries</title>
+  <meta
+    name="description"
+    content="Contact Vardha for retail and wholesale grocery enquiries through the contact form or WhatsApp."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">
+          <strong>Vardha</strong>
+          <small>Wholesale & Retail Grocery</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero page-hero-soft">
+      <div class="container narrow reveal">
+        <p class="eyebrow">Contact Vardha</p>
+        <h1>Make retail or wholesale enquiries with ease.</h1>
+        <p class="lead">
+          The contact page is designed to feel direct and reassuring so visitors can reach out
+          for pricing, availability, category details, or bulk requirements.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <article class="contact-panel reveal">
+          <p class="mini-label">Business Information</p>
+          <h2>Reach out through your preferred channel</h2>
+          <p>
+            Families can ask about daily grocery needs, while wholesale buyers can send
+            more detailed quantity requirements through the form.
+          </p>
+
+          <div class="contact-detail-list">
+            <div class="contact-detail-card">
+              <h3>Phone</h3>
+              <p>+91 9600029246</p>
+            </div>
+            <div class="contact-detail-card">
+              <h3>Email</h3>
+              <p>vardhagrocers@gmail.com</p>
+            </div>
+            <div class="contact-detail-card">
+              <h3>Availability</h3>
+              <p>Retail support and wholesale enquiries welcome</p>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20have%20a%20grocery%20enquiry."
+            class="btn btn-whatsapp contact-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start WhatsApp Chat
+          </a>
+        </article>
+
+        <form class="contact-form-card reveal reveal-delay" id="contactForm">
+          <h2>Send an enquiry</h2>
+          <p class="form-intro">This form uses a simple front-end flow and prepares an email-style enquiry message.</p>
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+          <label for="interest">Product Interest</label>
+          <select id="interest" name="interest" required>
+            <option value="">Select a category</option>
+            <option>Avals</option>
+            <option>Dry Fruits</option>
+            <option>Fruits</option>
+            <option>Greens</option>
+            <option>Vegetables</option>
+            <option>Flours</option>
+            <option>Pulses</option>
+            <option>Wheat</option>
+            <option>Snacks</option>
+            <option>Personal Care</option>
+            <option>Home Care</option>
+            <option>Sides</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us what you need, including retail or wholesale quantity details" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+          <p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand">
+          <span class="brand-mark">V</span>
+          <span class="brand-text">
+            <strong>Vardha</strong>
+            <small>Premium Grocery Store</small>
+          </span>
+        </a>
+        <p>Trusted wholesale and retail groceries with a clean, premium customer experience.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Business Info</h3>
+        <p>Phone: +91 9600029246</p>
+        <p>Email: vardhagrocers@gmail.com</p>
+        <p>Open for family and wholesale enquiries.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/919600029246?text=Hello%20Vardha%2C%20I%20would%20like%20to%20know%20more%20about%20your%20grocery%20products."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Vardha on WhatsApp"
+  >
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
